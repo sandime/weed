@@ -3,7 +3,75 @@
  */
 var app = angular.module('myApp', []);
 //note interactiveBtn is used with a dash in the dom, but interpreted like this in js
-app.directive('interactiveBtn', function ()
+app.controller('ShieldCtrl', function($scope){
+    $scope.shieldNames = [];
+    this.addReigns = function ()
+    {
+        $scope.shieldNames.push("Roman: Juggernaut");
+    };
+    this.addRollins = function ()
+    {
+        $scope.shieldNames.push("Rollins: Architect");
+    };
+    this.addAmbrose = function ()
+    {
+        $scope.shieldNames.push("Ambrose: Lunatic Fringe");
+    };
+})
+.directive('theshield', function(){
+    return {
+        restrict: 'E',
+        //add scope to isolate the scope
+        scope: {},
+        controller: "ShieldCtrl",
+        link: function (scope, element, attrs)
+    {
+        element.bind('mouseenter', function(){
+            console.log(scope.shieldNames)
+        });
+    }
+    }
+})
+    //add reigns
+
+    .directive('reigns',function ()
+    {
+      return {
+          require: "theshield",
+          link: function(scope,element, attrs, ShieldCtrl)
+          {
+              ShieldCtrl.addReigns();
+          }
+      }
+    })
+
+    //add rollins
+    .directive('rollins',function ()
+    {
+        return {
+            require: "theshield",
+            link: function(scope,element, attrs, ShieldCtrl)
+            {
+                ShieldCtrl.addRollins();
+            }
+        }
+    })
+
+    //add ambrose
+
+    .directive('ambrose',function ()
+    {
+        return {
+            require: "theshield",
+            link: function(scope,element, attrs, ShieldCtrl)
+            {
+                ShieldCtrl.addAmbrose();
+            }
+        }
+    })
+    //button
+
+.directive('interactiveBtn', function ()
 {
     return {
         restrict: 'A',
