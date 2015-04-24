@@ -2,8 +2,17 @@
  * Created by SHERRI on 4/23/15.
  */
 var app = angular.module('myApp', []);
+app.directive('restrictions', function(){
+    return {
+        restrict: 'A',
+        link: function()
+        {
+            console.log('i am an attribute')
+        }
+    }
+})
 //note interactiveBtn is used with a dash in the dom, but interpreted like this in js
-app.controller('ShieldCtrl', function($scope){
+.controller('ShieldCtrl', function($scope){
     $scope.shieldNames = [];
     this.addReigns = function ()
     {
