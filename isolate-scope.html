@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="mainContainer" ng-app="isolateApp">
+    <div ng-controller="AppCtrl">
+     <div class="row">
+         <character name="Roman"
+            image="reigns.jpg"
+            movetype="movetype"
+            use-move=getMove(name, movetype, move)
+            class="col-xs-4">
+
+         </character>
+
+         <character name="Rollins"
+                    image="rollins.jpg"
+                    movetype="movetype"
+                    use-move=getMove(name, movetype, move)
+                    class="col-xs-4">
+
+         </character>
+
+         <character name="Ambrose"
+                    image="ambrose.jpg"
+                    movetype="movetype"
+                    use-move=getMove(name, movetype, move)
+                    class="col-xs-4">
+
+         </character>
+     </div>
+    </div>
+</div>
+</body>
+</html>
