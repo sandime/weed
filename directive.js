@@ -13,12 +13,21 @@ app.directive('restrictions', function(){
 })
     // element directive
 
-app.directive('elementrest', function(){
+.directive('elementrest', function(){
     return {
         restrict: 'E',
         link: function()
         {
             console.log('i am an element')
+        }
+    }
+})
+.directive('classrest', function(){
+    return {
+        restrict: 'C',
+        link: function()
+        {
+            console.log('i am class restriction')
         }
     }
 })
