@@ -7,7 +7,7 @@ app.directive('restrictions', function(){
         restrict: 'A',
         link: function()
         {
-            console.log('i am an attribute')
+            console.log('i am an attribute restriction')
         }
     }
 })
@@ -18,7 +18,7 @@ app.directive('restrictions', function(){
         restrict: 'E',
         link: function()
         {
-            console.log('i am an element')
+            console.log('i am an element restriction');
         }
     }
 })
@@ -27,11 +27,22 @@ app.directive('restrictions', function(){
         restrict: 'C',
         link: function()
         {
-            console.log('i am class restriction')
+            console.log('i am a class restriction');
         }
     }
 })
 
+    // rarely used comment restriction callled M restriction
+
+    .directive('commentsrest', function(){
+        return {
+            restrict: 'M',
+            link: function()
+            {
+                console.log('i am a comment restriction');
+            }
+        }
+    })
 //note interactiveBtn is used with a dash in the dom, but interpreted like this in js
 .controller('ShieldCtrl', function($scope){
     $scope.shieldNames = [];
