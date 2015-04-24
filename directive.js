@@ -11,6 +11,18 @@ app.directive('restrictions', function(){
         }
     }
 })
+    // element directive
+
+app.directive('elementrest', function(){
+    return {
+        restrict: 'E',
+        link: function()
+        {
+            console.log('i am an element')
+        }
+    }
+})
+
 //note interactiveBtn is used with a dash in the dom, but interpreted like this in js
 .controller('ShieldCtrl', function($scope){
     $scope.shieldNames = [];
