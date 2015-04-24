@@ -4,7 +4,15 @@
 var app = angular.module('myApp', []);
 //note interactiveBtn is used with a dash in the dom, but interpreted like this in js
 app.directive("interactiveBtn", function(){
+    return {
+        restrict: 'A',
+        transclude: true,
+        //scope, element, attrs can be called anything, but always have the value of what they're named
+        link: function (scope, element, attrs)
+        {
 
+        }
+    }
 }) //chain by deleting app below and the semicolon here
 
 .directive('walterwhite', function() {
