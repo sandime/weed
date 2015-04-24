@@ -8,33 +8,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
     <script src="isolate-scope.js"></script>
 <body>
-<div class="mainContainer" ng-app="isolateApp">
-    <div ng-controller="AppCtrl">
-     <div class="row">
-         <character name="Roman"
-            image="reigns.jpg"
-            movetype="movetype"
-            use-move=getMove(name, movetype, move)
-            class="col-xs-4">
-
-         </character>
-
-         <character name="Rollins"
-                    image="rollins.jpg"
-                    movetype="movetype"
-                    use-move=getMove(name, movetype, move)
-                    class="col-xs-4">
-
-         </character>
-
-         <character name="Ambrose"
-                    image="ambrose.jpg"
-                    movetype="movetype"
-                    use-move=getMove(name, movetype, move)
-                    class="col-xs-4">
-
-         </character>
-     </div>
+<div class="mainContainer" data-ng-app="isolateApp">
+    <div data-ng-controller="AppCtrl">
+        <div class="row">
+            <character name="Roman Reigns"
+                       image="reigns.jpg"
+                       movetype="movetype"
+                       use-move="getMove(name, movetype, move)"
+                       class="col-xs-4"></character>
+            <character name="Seth Rollins"
+                       image="rollins.jpg"
+                       movetype="movetype"
+                       use-move="getMove(name, movetype, move)"
+                       class="col-xs-4"></character>
+            <character name="Dean Ambrose"
+                       image="ambrose.jpg"
+                       movetype="movetype"
+                       use-move="getMove(name, movetype, move)"
+                       class="col-xs-4"></character>
+        </div>
     </div>
 </div>
 </body>
