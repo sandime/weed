@@ -15,6 +15,6 @@ app.controller("AppCtrl", function($scope, $element){
                 name:"@",
                 image:"@"
             },
-            templateUrl: 'partials/shield_isolate.html'
+            templateUrl: 'shield_isolate.html'
         }
     });
